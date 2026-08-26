@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>경기AM지점 교육일정표</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Malgun Gothic','맑은 고딕',-apple-system,sans-serif;
+  background:#f0f2f5;
+}
+.header {
+  background:linear-gradient(135deg,#002060,#003399);
+  color:white; padding:12px 16px;
+  position:sticky; top:0; z-index:100;
+  box-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+.header h1 { font-size:15px; font-weight:700; }
+.header p { font-size:10px; opacity:0.8; margin-top:2px; }
+.tab-bar {
+  display:flex; overflow-x:auto;
+  background:#fff; border-bottom:2px solid #002060;
+  position:sticky; top:52px; z-index:99; scrollbar-width:none;
+}
+.tab-bar::-webkit-scrollbar { display:none; }
+.tab-btn {
+  flex-shrink:0; padding:8px 14px; border:none; background:none;
+  font-size:12px; font-weight:500; color:#666; cursor:pointer;
+  white-space:nowrap; border-bottom:3px solid transparent;
+  font-family:inherit; transition:all 0.2s;
+}
+.tab-btn:hover { background:#f0f4ff; color:#002060; }
+.tab-btn.active {
+  color:#002060; font-weight:700;
+  border-bottom:3px solid #002060; background:#f0f4ff;
+}
+.tab-panel { padding:10px 6px; }
+.img-wrapper {
+  border-radius:8px; overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,0,0,0.15);
+  background:white; overflow-x:auto;
+}
+.img-wrapper img {
+  display:block; width:100%; height:auto;
+  touch-action:pan-x pan-y pinch-zoom;
+}
+.bottom-note {
+  text-align:center; padding:16px; color:#999; font-size:10px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📋 경기AM지점 교육일정표</h1>
+  <p>두 손가락으로 확대 · 탭을 눌러 월 이동</p>
+</div>
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab(0)">25.12월</button>
+<button class="tab-btn " onclick="switchTab(1)">26.01월</button>
+<button class="tab-btn " onclick="switchTab(2)">26.02월</button>
+<button class="tab-btn " onclick="switchTab(3)">26.03월</button>
+<button class="tab-btn " onclick="switchTab(4)">26.04월</button>
+<button class="tab-btn " onclick="switchTab(5)">26.05월</button>
+<button class="tab-btn " onclick="switchTab(6)">26.06월</button>
+<button class="tab-btn " onclick="switchTab(7)">26.07월</button>
+<button class="tab-btn " onclick="switchTab(8)">26.08월</button>
+<button class="tab-btn " onclick="switchTab(9)">26.09월</button>
+<button class="tab-btn " onclick="switchTab(10)">26.10월</button>
+<button class="tab-btn " onclick="switchTab(11)">26.11월</button>
+<button class="tab-btn " onclick="switchTab(12)">26.12월</button>
+
+</div>
+
+<div class="tab-panel" id="panel-0" style="display:block">
+  <div class="img-wrapper">
+    <img src="images/25_12월-1.png" alt="25.12월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-1" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_01월-1.png" alt="26.01월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-2" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_02월-1.png" alt="26.02월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-3" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_03월-1.png" alt="26.03월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-4" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_04월-1.png" alt="26.04월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-5" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_05월-1.png" alt="26.05월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-6" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_06월-1.png" alt="26.06월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-7" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_07월-1.png" alt="26.07월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-8" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_08월-1.png" alt="26.08월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-9" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_09월-1.png" alt="26.09월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-10" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_10월-1.png" alt="26.10월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-11" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_11월-1.png" alt="26.11월" loading="lazy">
+  </div>
+</div>
+<div class="tab-panel" id="panel-12" style="display:none">
+  <div class="img-wrapper">
+    <img src="images/26_12월-1.png" alt="26.12월" loading="lazy">
+  </div>
+</div>
+<div class="bottom-note">경기AM지점 © 2025-2026</div>
+<script>
+function switchTab(idx) {
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===idx));
+  document.querySelectorAll('.tab-panel').forEach((p,i)=>p.style.display=i===idx?'block':'none');
+  document.querySelectorAll('.tab-btn')[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+(function(){
+  const now=new Date();
+  const yy=String(now.getFullYear()).slice(2);
+  const mm=String(now.getMonth()+1).padStart(2,'0');
+  const target=yy+'.'+mm+'월';
+  document.querySelectorAll('.tab-btn').forEach((btn,i)=>{
+    if(btn.textContent.trim().startsWith(target)) switchTab(i);
+  });
+})();
+</script>
+</body>
+</html>
